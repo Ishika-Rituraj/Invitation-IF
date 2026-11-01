@@ -201,9 +201,15 @@ html.js .cal{display:inline-block}
 #vinayak .vk{width:64%;margin:2rem 0 0 auto;text-align:right}
 #vinayak .vk .hi{text-align:right}
 #vinayak .vk .eng{margin-right:-.2em}
-#vinayak .kalash{left:0;bottom:5.2rem;width:36%;aspect-ratio:338/174;background-image:url(kalash.webp)}
+#vinayak .vk{position:relative}
+#vinayak .kalash{left:-56%;top:50%;transform:translateY(-50%);width:48%;aspect-ratio:338/174;background-image:url(kalash.webp)}
 
 /* ---------- mayra ---------- */
+#vinayak{padding-bottom:3.2rem}
+#vinayak .vm{position:relative;margin-top:2rem;text-align:left}
+#vinayak .vm .desc{max-width:12.5rem}
+#vinayak .jh{width:29%;aspect-ratio:290/552;right:2%;top:-.4rem;background-image:var(--i-jhumka);z-index:2;transform-origin:50% 0;animation:swing 5.5s ease-in-out infinite alternate;animation-play-state:paused}
+#vinayak.live .jh{animation-play-state:running}
 #mayra{padding-bottom:4rem}
 #mayra .hi{font-size:var(--ev-hi);margin-top:.3rem}
 #mayra .eng{letter-spacing:.16em;font-size:var(--ev-eng);color:#d86bd6;margin-top:.15rem}
@@ -311,7 +317,7 @@ html.js .cal{display:inline-block}
 #dj .paint{animation:glow 3.4s ease-in-out infinite alternate;animation-play-state:paused}
 #dj.live .paint{animation-play-state:running}
 @keyframes glow{from{box-shadow:0 0 6px rgba(150,110,255,.18)}to{box-shadow:0 0 26px rgba(225,105,225,.55)}}
-@media (prefers-reduced-motion:reduce){#mayra .jh,.st,#dj .paint{animation:none}}
+@media (prefers-reduced-motion:reduce){#vinayak .jh,#mayra .jh,.st,#dj .paint{animation:none}}
 
 footer{background:var(--red-d);text-align:center;padding:2rem 1rem 2.4rem;color:var(--gold);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;position:relative}
 footer .script{font-size:1.7rem;text-transform:none;letter-spacing:0;display:block;margin-bottom:.3rem}
@@ -408,6 +414,7 @@ html.js .rv.in{opacity:1;transform:none}
   <div class="vdiv"></div>
 
   <div class="in-front rv vk">
+    <div class="art kalash"></div>
     <div class="hi">मंगल कलश</div>
     <div class="eng cap">Mangal Kalash</div>
     <div class="when">
@@ -418,25 +425,26 @@ html.js .rv.in{opacity:1;transform:none}
     </div>
   </div>
 
-  <div class="art kalash"></div>
+
+  <div class="vdiv"></div>
+
+  <div class="in-front rv vm">
+    <div class="art jh"></div>
+    <div class="hi">मिलनी</div>
+    <div class="eng cap">Milni</div>
+    <p class="desc">This is when bride&#8217;s and groom&#8217;s families make it official, meet and greet each other</p>
+    <div class="when">
+      <div class="label">Time</div>
+      <div class="d">DECEMBER 17</div>
+      <div class="t">7:15 PM</div>
+      <a class="cal" data-t="Milni · Ishika &amp; Rituraj" data-s="20261217T191500" data-e="20261217T205000">+ Add to calendar</a>
+    </div>
+  </div>
 </section>
   
 <!-- ============ MAYRA ============ -->
 <section class="card blue" id="mayra" data-k="events">
   <div class="banner"></div>
-  <div class="in-front rv ml" style="text-align:left;padding-left:.2rem;position:relative">
-    <div class="art jh"></div>
-    <div class="hi">मिलनी</div>
-    <div class="eng cap" style="margin-left:.2rem">Milni</div>
-    <p class="desc">This is when bride's and groom's families make it official, meet and greet each other</p>
-    <div class="when mw">
-      <div class="label">Time</div>
-      <div class="d">DECEMBER 18</div>
-      <div class="t">9:15 AM</div>
-      <a class="cal" data-t="Milni · Ishika &amp; Rituraj" data-s="20261218T091500" data-e="20261218T101000">+ Add to calendar</a>
-    </div>
-  </div>
-  <div class="mdiv rv"></div>
   <div class="mb">
   <div class="in-front rv" style="text-align:left;padding-left:.2rem">
     <div class="hi">मायरा</div>
@@ -446,8 +454,8 @@ html.js .rv.in{opacity:1;transform:none}
   <div class="when mw rv">
     <div class="label">Time</div>
     <div class="d">DECEMBER 18</div>
-    <div class="t">10:15 AM</div>
-    <a class="cal" data-t="Mayra · Ishika &amp; Rituraj" data-s="20261218T101500" data-e="20261218T120000">+ Add to calendar</a>
+    <div class="t">9:15 AM</div>
+    <a class="cal" data-t="Mayra · Ishika &amp; Rituraj" data-s="20261218T091500" data-e="20261218T120000">+ Add to calendar</a>
   </div>
   </div>
   <div class="art holi"></div>
@@ -693,7 +701,7 @@ var LOCATION = "Via Lakhela Lakeview Resort, Pratap Marg, Fort Road, Kumbhalgarh
           sc.appendChild(d);
         }
       }
-      var ids=['mayra','haldi','dj'],els2=[];
+      var ids=['vinayak','mayra','haldi','dj'],els2=[];
       for(i=0;i<ids.length;i++){var e=document.getElementById(ids[i]);if(e)els2.push(e)}
       if('IntersectionObserver' in window){
         var io2=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('live',e.isIntersecting)})});
